@@ -1,6 +1,3 @@
-
-
-
 import { ApiResponse } from '@/types/api.types';
 import axios from 'axios';
 
@@ -18,7 +15,6 @@ const axiosInstance = () => {
             'Content-Type' : 'application/json',
         }
     })
-
     return instance;
 }
 
@@ -79,7 +75,7 @@ const httpPatch = async <TData>(endpoint: string, data: unknown, options?: ApiRe
     catch (error) {
         console.error(`PATCH request to ${endpoint} failed:`, error);
         throw error;
-    }
+    }  
 }
 
 const httpDelete =  async <TData>(endpoint: string, options?: ApiRequestOptions) : Promise<ApiResponse<TData>> => {
