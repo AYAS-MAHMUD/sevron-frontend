@@ -1,15 +1,16 @@
-import LoginForm from '@/components/module/auth/LoginForm'
-import React from 'react'
+import LoginForm from "@/components/module/auth/LoginForm";
 
-const LoginPage = () => {
+
+interface LoginParams {
+  searchParams: Promise<{ redirect?: string }>;
+}
+
+const LoginPage = async ({ searchParams }: LoginParams) => {
+  const params = await searchParams;
+  const redirectPath = params.redirect;
   return (
-    <div className='flex justify-center items-center '>
-      <LoginForm/>
-    </div>
+    <LoginForm redirectPath={redirectPath}/>
   )
-}    
+}
 
 export default LoginPage
-
-
-
